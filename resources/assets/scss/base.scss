@@ -1,0 +1,197 @@
+@use "@material/theme/color-palette";
+@use "@material/theme" with (
+    $primary: color-palette.$blue-700,
+    $secondary: color-palette.$green-a400
+);
+
+@use '@material/theme/mdc-theme';
+@use '@material/typography/mdc-typography';
+@use '@material/layout-grid/mdc-layout-grid';
+@use '@material/elevation/mdc-elevation';
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/linear-progress";
+@use "@material/select/select-theme";
+@use "@material/dialog";
+
+@use './components/notify';
+
+@include linear-progress.core-styles;
+@include icon-button.core-styles;
+@include dialog.core-styles;
+
+$color-success: #2ae419 !default;
+$color-danger: #ff3d00 !default;
+
+
+body {
+    margin: 0;
+    position: relative;
+}
+
+.divider {
+    height: 1px;
+    border: none;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.mdc-linear-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 24;
+}
+
+.status-no_requested {
+    color: #ff3d00;
+}
+
+.status-pending {
+    color: #0065e9;
+}
+
+.status-approved {
+    color: #13a505;
+}
+
+.status-observed {
+    color: #e2cd0f;
+}
+
+.badge-status {
+    padding: 2px 8px;
+    border-radius: 8px;
+    color: #222;
+
+    &.no_requested {
+        background-color: #ff3d00;
+        color: #fff;
+    }
+
+    &.pending {
+        background-color: #0065e9;
+        color: #fff;
+    }
+
+    &.approved {
+        background-color: #13a505;
+        color: #fff;
+    }
+
+    &.observed {
+        background-color: #e2cd0f;
+    }
+}
+
+.select {
+    position: relative;
+    display: inline-flex;
+    height: select-theme.$height;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.6);
+    background: transparent;
+    min-width: select-theme.$default-width;
+
+    select:disabled {
+        color: rgba(0, 0, 0, 0.38);
+        border-color: rgba(0, 0, 0, 0.06) !important;
+        & ~ .select-label, & ~ ::after {
+            color: rgba(0, 0, 0, 0.38);
+            border-top-color: rgba(0, 0, 0, 0.38);
+        }
+
+        .select-text {
+            color: rgba(0, 0, 0, 0.38);
+            border-color: rgba(0, 0, 0, 0.06) !important;
+        }
+    }
+
+    &:after {
+        position: absolute;
+        top: 26px;
+        right: max(16px, var(--mdc-shape-small, 4px));
+        width: 0;
+        height: 0;
+        padding: 0;
+        content: '';
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid rgba(0, 0, 0, 0.54);
+
+        pointer-events: none;
+    }
+
+    .select-text {
+        position: relative;
+        background-color: transparent;
+        width: inherit;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.38);
+        line-height: 1.15rem;
+        height: inherit;
+        font-size: var(--mdc-typography-subtitle1-font-size, 1rem);
+        font-weight: var(--mdc-typography-subtitle1-font-weight, 400);
+        padding-left: max(16px, calc(var(--mdc-shape-small, 4px) + 4px));
+        padding-right: max(16px, var(--mdc-shape-small, 4px));
+        appearance: none;
+        -webkit-appearance: none;
+
+        &:hover {
+            border-color: rgba(0, 0, 0, 0.87);
+        }
+
+        &:invalid {
+            color: var(--mdc-theme-error, #b00020);
+            border-color: var(--mdc-theme-error, #b00020);
+        }
+
+        &:focus ~ .select-label, &:valid ~ .select-label {
+            top: -10px;
+            left: 4px;
+            transition: 0.2s ease all;
+            transform: scale(0.75);
+            color: var(--mdc-theme-primary, #6200ee);
+        }
+
+        &:valid:not(focus) ~ .select-label {
+            color: rgba(0,0,0, 0.54);
+        }
+
+        &:focus {
+            outline: none;
+            border-width: 2px;
+            border-color: var(--mdc-theme-primary, #6200ee);
+            .select-label {
+                color: var(--mdc-theme-primary, #6200ee);
+            }
+        }
+    }
+
+    .select-label {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: var(--mdc-typography-subtitle1-font-size, 1rem);
+        font-weight: var(--mdc-typography-subtitle1-font-weight, 400);
+        background: white;
+        position: absolute;
+        pointer-events: none;
+        padding: 0 5px;
+        left: 12px;
+        top: 16px;
+        transition: 0.2s ease all;
+    }
+
+    &.mdc-data-table__pagination-rows-per-page-select {
+        height: 36px;
+        &:after {
+            top: 16px;
+        }
+    }
+}

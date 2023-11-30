@@ -1,0 +1,76 @@
+@use "@material/radio/styles" as radio-style;
+@use "@material/form-field";
+
+@include form-field.core-styles;
+
+.mdc-text-field, .mdc-select {
+    width: 100%;
+    input {
+        text-transform: uppercase;
+    }
+}
+
+.form-button-actions {
+    padding-top: 24px;
+    text-align: right;
+}
+
+.card-file {
+    .mdc-typography--Subtitle1 {
+        padding: 12px;
+        padding-bottom: 0;
+    }
+    .mdc-card__content {
+        padding: 0;
+    }
+
+    .mdc-card-wrapper__text-section {
+        padding: 16px 16px 0 16px;
+    }
+
+    .mdc-card__action-buttons{
+        text-align: right;
+    }
+
+    .list-files {
+        padding: 12px;
+        .mdc-list-item__graphic {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .mdc-list-item__secondary-text {
+            white-space: normal;
+        }
+
+        .mdc-list-item {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    button.btn-upload {
+        text-align: center;
+        display: block;
+        height: auto !important;
+        padding: 16px 8px;
+        background: #eee;
+        width: 100%;
+    }
+}
+
+.doc-status-observed {
+    .mdc-list-item__primary-text {
+        color: #dd8533;
+    }
+    .mdc-icon-button {
+        color:#dd8533;
+    }
+}
+
+.doc-status-verified {
+    .mdc-list-item__primary-text {
+        color: #2ae419;
+    }
+}

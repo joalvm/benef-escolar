@@ -1,0 +1,59 @@
+@use "@material/data-table/data-table";
+@use "@material/dialog";
+@use "@material/radio/styles";
+@use "@material/form-field";
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+@include dialog.core-styles;
+@include form-field.core-styles;
+
+.mdc-data-table {
+    width: 100%;
+}
+
+.bono-extra {
+    font-size: 60%;
+    color: #13a505;
+    vertical-align: super;
+    letter-spacing: -.03em;
+}
+
+.card-amount {
+    .mdc-typography--headline4 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 1.6rem;
+    }
+
+    .mdc-typography--body2 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--mdc-theme-text-disabled-on-background);
+        margin: 0;
+    }
+
+    .mdc-card__content {
+        padding: 12px;
+    }
+}
+
+.request-empty-list {
+    text-align: center;
+    display: block;
+    height: auto !important;
+    padding: 16px 8px;
+    background: #eee;
+    width: 100%;
+}
+
+.mdc-list-item__graphic {
+    background-position: center;
+    background-size: cover;
+}
+
+#frm-person_requests {
+    .mdc-card__content {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,42 @@
+@use "@material/textfield";
+@use "@material/dialog";
+
+@include dialog.core-styles;
+@include textfield.core-styles;
+
+.info-text {
+    text-align: center;
+
+    h1 {
+        font-weight: 300;
+    }
+
+    #form-document {
+        margin-top: 36px;
+    }
+
+    .mdc-button {
+        height: 100%;
+        border: none;
+    }
+
+    .mdc-text-field {
+        width: 100%;
+    }
+
+    .mdc-layout-grid__inner {
+        grid-gap: 0;
+    }
+}
+
+#dialog-confirm {
+    .description {
+        margin-bottom: 24px;
+        display: block;
+    }
+
+    #email-confirm {
+        width: 100%;
+        margin-top: 24px;
+    }
+}

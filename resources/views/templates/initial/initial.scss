@@ -1,0 +1,43 @@
+@use "@material/button/mdc-button";
+@use "@material/list/mdc-list";
+
+.grid-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.7fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "panel-left panel-left header header header header header header header header header header"
+    "panel-left panel-left content content content content content content content content content content";
+    .panel-left {
+        background-color: var(--mdc-theme-primary);
+        grid-area: panel-left;
+    }
+    .header {
+        grid-area: header;
+        align-self: center;
+    }
+    .content {
+        grid-area: content;
+        background-color: var(--mdc-theme-on-primary);
+    }
+}
+
+
+.header-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    align-self: center;
+    gap: 0px 0px;
+    padding: 0 24px;
+    grid-template-areas: "header-title header-title header-title header-title header-title header-actions header-actions header-actions header-actions header-actions";
+    .header-title {
+        grid-area: header-title;
+    }
+    .header-actions {
+        grid-area: header-actions;
+        align-self: center;
+        text-align: end;
+    }
+}

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "allowJs": false,
+    "noImplicitAny": true,
+    "noImplicitUseStrict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "skipDefaultLibCheck": true,
+    "lib": [
+        "ES2015",
+        "ES2016",
+        "ES2017",
+        "DOM",
+        "ScriptHost"
+    ]
+  },
+  "include": [
+      "resources"
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts"],
+}

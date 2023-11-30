@@ -1,0 +1,15 @@
+@use "@material/icon-button";
+@use "@material/data-table/data-table";
+
+@include icon-button.core-styles;
+@include data-table.core-styles;
+
+main {
+    .mdc-card__content {
+        padding: 0 !important;
+    }
+
+    .mdc-data-table {
+        width: 100%;
+    }
+}

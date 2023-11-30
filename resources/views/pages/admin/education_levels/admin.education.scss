@@ -1,0 +1,21 @@
+@use "@material/data-table/data-table";
+@use "@material/dialog";
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+@include dialog.core-styles;
+
+#education-levels-list {
+    width: 100%;
+}
+
+.self-middle {
+    align-self: center;
+    text-align: right;
+}
+
+#form-register {
+    &.mdc-dialog__content {
+        height: auto;
+    }
+}

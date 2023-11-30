@@ -1,0 +1,71 @@
+@use "@material/card";
+@use "@material/drawer";
+@use "@material/list/mdc-list.import";
+@use "@material/button/mdc-button";
+@use "@material/menu/mdc-menu";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+@use "@material/tooltip/styles";
+@use "@material/dialog";
+@use "@material/radio/mdc-radio";
+@use "@material/form-field";
+@include card.core-styles;
+@include form-field.core-styles;
+@include dialog.core-styles;
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+@include textfield.core-styles;
+body {
+    background: #f5f5f5;
+    display: flex; // Removes top gap between modal drawer and viewport
+    height: 100vh; // Ensures that permanent drawer extends to bottom of viewport
+    margin: 0; // Removes top gap between top app bar and viewport
+}
+
+.mdc-drawer-app-content {
+    flex: auto;
+    overflow: auto;
+    position: relative;
+}
+
+.main-content {
+    overflow: auto;
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.mdc-text-field {
+    width: 100%;
+}
+
+.app-bar {
+    position: absolute;
+}
+
+// Only apply this style if below top app bar.
+.mdc-top-app-bar {
+    z-index: 7;
+}
+
+.text-overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.my-custom-card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    >.mdc-card__content {
+        padding: 24px;
+    }
+}
+
+#btn-period {
+    color: var(--mdc-theme-on-primary, #fff);
+    border-color: var(--mdc-theme-text-secondary-on-dark, #fff);
+    margin: 0 var(--mdc-layout-grid-gutter-phone, 8px);
+}

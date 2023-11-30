@@ -1,0 +1,29 @@
+@use "@material/data-table/data-table";
+@use "@material/dialog";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/select/styles";
+@use "@material/checkbox";
+@use "@material/radio/styles" as radio-style;
+@use "@material/form-field";
+
+@include data-table.core-styles;
+@include data-table.theme-baseline;
+@include dialog.core-styles;
+@include checkbox.core-styles;
+@include form-field.core-styles;
+
+#periods-list {
+    width: 100%;
+}
+
+.self-middle {
+    align-self: center;
+    text-align: right;
+}
+
+#form-register {
+    &.mdc-dialog__content {
+        height: auto;
+    }
+}
